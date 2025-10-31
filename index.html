@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tablero Kanban</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="kanban">
-    <section class="columnaTodo">
-      <h2>Todo</h2>
-      <article class="tarjeta">
-        <p>Diseñar la interfaz del proyecto</p>
-        <button class="eliminar">✘</button>
-      </article>
-      <article class="tarjeta">
-        <p>Revisar los requisitos del cliente</p>
-        <button class="eliminar">✘</button>
-      </article>
-      <button class="nueva">+ Añadir tarjeta</button>
-    </section>
+    <h1>Tablero Kanban</h1>
+    <main class="kanban"> 
+        <section class="columna">
+            <h2>Todo</h2>
+            <article class="tarjeta">
+                <p>Diseñar la interfaz del proyecto</p>
+                <button class="eliminar">✘</button>
+            </article>
+            <article class="tarjeta">
+                <p>Revisar los requisitos del cliente</p>
+                <button class="eliminar">✘</button>
+            </article>
+            <div class="textoTarjeta"><input type="text" value="Introduce un título"></div>
+            <button class="nueva">+ Añadir tarjeta</button>
+        </section>
 
-    <section class="columnaDoing">
-      <h2>En progreso</h2>
-      <article class="tarjeta">
-        <p>Programar componentes básicos</p>
-        <button class="eliminar">✘</button>
-      </article>
-      <button class="nueva">+ Añadir tarjeta</button>
-    </section>
+        <section class="columna">
+            <h2>En progreso</h2>
+            <article class="tarjeta">
+                <p>Programar componentes básicos</p>
+                <button class="eliminar">✘</button>
+            </article>
+            <button class="nueva">+ Añadir tarjeta</button>
+        </section>
 
-    <section class="columnaDone">
-      <h2>Hecho</h2>
-      <article class="tarjeta">
-        <p>Crear estructura HTML</p>
-        <button class="eliminar">✘</button>
-      </article>
-      <button class="nueva">+ Añadir tarjeta</button>
-    </section>
-  </main>
+        <section class="columna">
+            <h2>Hecho</h2>
+            <article class="tarjeta">
+                <p>Crear estructura HTML</p>
+                <button class="eliminar">✘</button>
+            </article>
+            <button class="nueva">+ Añadir tarjeta</button>
+        </section>
+    </main>
 </body>
+
 </html>

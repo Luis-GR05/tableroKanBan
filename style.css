@@ -1,0 +1,137 @@
+/* VARIABLES */
+:root {
+    --color-fondo: #f4f5f7;
+    --color-columna: #e3e7ec;
+    --color-tarjeta: #ffffff;
+    --color-principal: #00adb5;
+    --color-texto: #1e1e1e;
+    --color-eliminar: #ff4b4b;
+    --color-hover: #d1ecf1;
+
+    --fuente: "Roboto", sans-serif;
+    --fontSize-titulo: 24px;
+    --fontSize-texto: 16px;
+}
+
+/* ESTILOS GENERALES */
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+    min-height: 100vh;
+    color: var(--color-texto);
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITULO PRINCIPAL */
+h1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: var(--color-principal);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.kanban {
+    display: flex;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* COLUMNAS */
+.columna {
+    background: var(--color-columna);
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.columna h2 {
+    text-align: center;
+    font-size: var(--fontSize-titulo);
+    margin-bottom: 10px;
+    color: var(--color-principal);
+}
+
+/* TARJETAS */
+.tarjeta {
+    background: var(--color-tarjeta);
+    border-radius: 10px;
+    padding: 15px 45px 15px 15px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta p {
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+/* BOTÓN ELIMINAR */
+.eliminar {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: var(--color-eliminar);
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* EFECTOS HOVER */
+.tarjeta:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-3px);
+}
+
+.tarjeta:hover p {
+    transform: translateX(-5px);
+}
+
+.tarjeta:hover .eliminar {
+    opacity: 1;
+}
+
+/* BOTÓN NUEVA TARJETA */
+.nueva {
+    border: none;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: var(--fontSize-texto);
+}
+
+.nueva:hover {
+    background-color: #028b91;
+}
+
+/* CAMPO DE TEXTO EN TARJETA */
+.textoTarjeta input {
+    width: 100%;
+    border: none;
+    font-size: var(--fontSize-texto);
+    padding: 8px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
