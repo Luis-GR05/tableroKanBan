@@ -9,10 +9,15 @@
 </head>
 
 <body>
-    <h1>Tablero Kanban</h1>
-    <main class="kanban"> 
+    <header>
+        <section class="titulo">
+            <h1>Tablero Kanban</h1>
+        </section>
+    </header>
+
+    <main class="kanban">
         <section class="columna">
-            <h2>Todo</h2>
+            <h2>Por hacer</h2>
             <article class="tarjeta">
                 <p>Diseñar la interfaz del proyecto</p>
                 <button class="eliminar">✘</button>
@@ -21,14 +26,22 @@
                 <p>Revisar los requisitos del cliente</p>
                 <button class="eliminar">✘</button>
             </article>
-            <div class="textoTarjeta"><input type="text" value="Introduce un título"></div>
-            <button class="nueva">+ Añadir tarjeta</button>
+            <div class="contenedor-nueva">
+                <div class="textoTarjeta">
+                    <input type="text" placeholder="Introduce un título (35)" maxlength="35">
+                </div>
+                <button class="nueva">+ Añadir Tarjeta</button>
+            </div>
         </section>
 
         <section class="columna">
             <h2>En progreso</h2>
             <article class="tarjeta">
                 <p>Programar componentes básicos</p>
+                <button class="eliminar">✘</button>
+            </article>
+            <article class="tarjeta">
+                <p>Programar componentes complejos</p>
                 <button class="eliminar">✘</button>
             </article>
             <button class="nueva">+ Añadir tarjeta</button>

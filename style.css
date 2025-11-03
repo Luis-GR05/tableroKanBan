@@ -1,12 +1,13 @@
 /* VARIABLES */
 :root {
-    --color-fondo: #f4f5f7;
+    --color-fondo: #000000;
     --color-columna: #e3e7ec;
     --color-tarjeta: #ffffff;
     --color-principal: #00adb5;
     --color-texto: #1e1e1e;
     --color-eliminar: #ff4b4b;
     --color-hover: #d1ecf1;
+    --color-sombra: rgba(0, 0, 0, 0.1);
 
     --fuente: "Roboto", sans-serif;
     --fontSize-titulo: 24px;
@@ -16,29 +17,43 @@
 /* ESTILOS GENERALES */
 body {
     font-family: var(--fuente);
-    background-color: var(--color-fondo);
+    background: linear-gradient(var(--color-fondo), var(--color-principal)); ;
     display: flex;
     justify-content: flex-start;
     padding: 40px;
-    min-height: 100vh;
+    height: 100vh;
     color: var(--color-texto);
     flex-direction: column;
     align-items: center;
 }
 
-/* TITULO PRINCIPAL */
+/* LOGO / TÍTULO PRINCIPAL */
+section.titulo {
+    width: auto;
+    padding: 12px 40px;
+    background: var(--color-principal);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
+    margin-bottom: 40px;
+}
+
 h1 {
     text-align: center;
-    width: 100%;
-    margin-bottom: 30px;
-    font-size: 32px;
-    color: var(--color-principal);
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 /* CONTENEDOR PRINCIPAL */
 .kanban {
     display: flex;
     gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 90%;
     max-width: 1200px;
 }
@@ -48,12 +63,12 @@ h1 {
     background: var(--color-columna);
     border-radius: 15px;
     padding: 20px;
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    min-height: 500px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px var(--color-sombra);
+    width: auto;
+    min-width: 250px;
 }
 
 .columna h2 {
@@ -69,7 +84,7 @@ h1 {
     border-radius: 10px;
     padding: 15px 45px 15px 15px;
     position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--color-sombra);
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -83,8 +98,7 @@ h1 {
 .eliminar {
     position: absolute;
     right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 25%;
     border: none;
     background: var(--color-eliminar);
     color: white;
@@ -126,12 +140,65 @@ h1 {
     background-color: #028b91;
 }
 
-/* CAMPO DE TEXTO EN TARJETA */
+/* CONTENEDOR INPUT + BOTÓN (VERTICAL) */
+.contenedor-nueva {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 6px var(--color-sombra);
+    padding: 15px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.contenedor-nueva:hover {
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.3);
+}
+
+/* INPUT PARA AÑADIR TARJETA */
+.textoTarjeta {
+    width: 90%;
+}
+
 .textoTarjeta input {
     width: 100%;
-    border: none;
+    border: 2px solid var(--color-principal);
+    outline: none;
     font-size: var(--fontSize-texto);
-    padding: 8px;
-    border-radius: 5px;
-    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--color-texto);
+    background: #f9f9f9;
+    transition: all 0.2s ease;
+}
+
+.textoTarjeta input:focus {
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 173, 181, 0.3);
+}
+
+.textoTarjeta input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* BOTÓN NUEVA TARJETA */
+.nueva {
+    border: none;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: var(--fontSize-texto);
+    font-weight: 500;
+    width: 100%;
+}
+
+.nueva:hover {
+    background-color: #028b91;
+    transform: scale(1.02);
 }
