@@ -140,7 +140,7 @@ h1 {
     background-color: #028b91;
 }
 
-/* CONTENEDOR INPUT + BOTÓN (VERTICAL) */
+/* CONTENEDOR INPUT + BOTÓN*/
 .contenedor-nueva {
     display: flex;
     flex-direction: column;
